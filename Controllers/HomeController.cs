@@ -10,6 +10,7 @@ namespace Agent_management_MVC_frontend.Controllers
 
         public HomeController(ILogger<HomeController> logger)
         {
+
             _logger = logger;
         }
 
