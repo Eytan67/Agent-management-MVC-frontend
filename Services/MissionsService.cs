@@ -2,21 +2,18 @@
 using Agent_management_MVC_frontend.Enum;
 using Agent_management_MVC_frontend.Interfaces;
 using Agent_management_MVC_frontend.ViewModels;
-using Agent_management_MVC_frontend.Shared;
-using Microsoft.AspNetCore.Mvc;
-using NuGet.Common;
-
 
 
 namespace Agent_management_MVC_frontend.Services
 {
-    public class MissionsService : IService
+    public class MissionsService 
     {
         private string _GetAllMissionsUrl = "http://localhost:5286/Missions";
         private string _GetMissionUrl = "http://localhost:5286/Missions/";
         private string _PutMissionStatusUrl = "http://localhost:5286/Missions/";
 
         private string _GetAgentUrl = "http://localhost:5286/Agents/";
+
         private string _GetTargetUrl = "http://localhost:5286/Targets/";
 
 

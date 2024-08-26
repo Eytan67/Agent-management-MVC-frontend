@@ -10,7 +10,7 @@ namespace Agent_management_MVC_frontend.Controllers
     public class MissionsController : Controller
     {
         private readonly MissionsService _missionsService;
-        public MissionsController(IService missionsService)
+        public MissionsController(MissionsService missionsService)
         {
             _missionsService = missionsService as MissionsService;
         }

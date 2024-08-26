@@ -9,8 +9,17 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddHttpClient();
 
-builder.Services.AddScoped<IService, MissionsService>();
+builder.Services.AddScoped<MissionsService>();
+builder.Services.AddScoped<GeneralService>();
+//builder.Services.AddScoped<IService, MissionsService>(provider =>
+//{
+//    return new MissionsService();
+//});
 
+//builder.Services.AddScoped<IService, GeneralService>(provider =>
+//{
+//    return new GeneralService();
+//});
 
 var app = builder.Build();
 
@@ -27,6 +36,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=General}/{action=Index}/{id?}");
 
 app.Run();
