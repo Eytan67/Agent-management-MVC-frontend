@@ -1,7 +1,16 @@
+using Agent_management_MVC_frontend.Models;
+using Agent_management_MVC_frontend.Services;
+using Agent_management_MVC_frontend.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddHttpClient();
+
+builder.Services.AddScoped<IService, MissionsService>();
+
 
 var app = builder.Build();
 
