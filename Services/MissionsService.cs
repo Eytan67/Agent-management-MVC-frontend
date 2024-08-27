@@ -1,6 +1,5 @@
 ﻿using Agent_management_MVC_frontend.Models;
 using Agent_management_MVC_frontend.Enum;
-using Agent_management_MVC_frontend.Interfaces;
 using Agent_management_MVC_frontend.ViewModels;
 
 

@@ -11,5 +11,8 @@ namespace Agent_management_MVC_frontend.Models
         public int AgentId { get; set; }
         public int TargetId { get; set; }
 
+        public DateTime StartTime { get; set; }
+        public TimeSpan finalTime { get; set; }
+        public TimeSpan leftTime { get; set; }
     }
 }

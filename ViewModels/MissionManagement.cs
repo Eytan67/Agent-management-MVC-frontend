@@ -13,7 +13,7 @@ namespace Agent_management_MVC_frontend.ViewModels
         public Coordinates TargetLocation { get; set; }
         public string TargetDescription {  get; set; }
         public double Distance { get; set; }
-        public DateTime? EliminationTime {  get; set; }
+        public TimeSpan EliminationTime { get { return CalculateLeftTime(Distance); } }
 
         public MissionManagement(int missionId, Agent agent, Target target)
         {
@@ -25,5 +25,13 @@ namespace Agent_management_MVC_frontend.ViewModels
             TargetDescription = target.Position;
             this.Distance = Shared.Distance.GetDistance(agent.Location, target.Location);
         }
+
+        private TimeSpan CalculateLeftTime(double distance)
+        {
+            double seconds = (distance / 5) * 3600;
+            TimeSpan leftTime = TimeSpan.FromSeconds(seconds);
+            return leftTime;
+        }
+
     }
 }

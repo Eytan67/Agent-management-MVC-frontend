@@ -2,6 +2,8 @@ using Agent_management_MVC_frontend.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
+
+
 namespace Agent_management_MVC_frontend.Controllers
 {
     public class HomeController : Controller
@@ -10,9 +12,9 @@ namespace Agent_management_MVC_frontend.Controllers
 
         public HomeController(ILogger<HomeController> logger)
         {
-
             _logger = logger;
         }
+
 
         public IActionResult Index()
         {
@@ -31,3 +33,4 @@ namespace Agent_management_MVC_frontend.Controllers
         }
     }
 }
+

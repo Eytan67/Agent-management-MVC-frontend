@@ -1,6 +1,5 @@
 using Agent_management_MVC_frontend.Models;
 using Agent_management_MVC_frontend.Services;
-using Agent_management_MVC_frontend.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,15 +10,7 @@ builder.Services.AddHttpClient();
 
 builder.Services.AddScoped<MissionsService>();
 builder.Services.AddScoped<GeneralService>();
-//builder.Services.AddScoped<IService, MissionsService>(provider =>
-//{
-//    return new MissionsService();
-//});
-
-//builder.Services.AddScoped<IService, GeneralService>(provider =>
-//{
-//    return new GeneralService();
-//});
+builder.Services.AddHttpClient<AgentService>();
 
 var app = builder.Build();
 

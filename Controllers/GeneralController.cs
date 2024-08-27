@@ -1,7 +1,8 @@
-﻿using Agent_management_MVC_frontend.Models;
-using Agent_management_MVC_frontend.Services;
+﻿using Agent_management_MVC_frontend.Services;
 using Agent_management_MVC_frontend.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+
+
 
 namespace Agent_management_MVC_frontend.Controllers
 {
@@ -16,7 +17,9 @@ namespace Agent_management_MVC_frontend.Controllers
         public async Task<IActionResult> Index()
         {
             GeneralView generalView = await _generalService.GetGeneralViewDetailsAsync();
+            
             return View(generalView);
         }
     }
 }
+

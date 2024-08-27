@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Agent_management_MVC_frontend.Models;
-using Newtonsoft.Json;
 using Agent_management_MVC_frontend.Services;
 using Agent_management_MVC_frontend.ViewModels;
-using Agent_management_MVC_frontend.Interfaces;
+
+
 
 namespace Agent_management_MVC_frontend.Controllers
 {
@@ -14,6 +13,8 @@ namespace Agent_management_MVC_frontend.Controllers
         {
             _missionsService = missionsService as MissionsService;
         }
+
+
         public IActionResult Index()
         {
             return View();
@@ -31,7 +32,6 @@ namespace Agent_management_MVC_frontend.Controllers
             {
                 return new ContentResult { Content = ex.Message };
             }
-
         }
 
         public async Task<IActionResult> Commit(int missionId)
@@ -40,10 +40,15 @@ namespace Agent_management_MVC_frontend.Controllers
 
             return RedirectToAction("GetProposalMissions");
         }
+
         public async Task<IActionResult> Details(int missionId)
         {
             var mission = await _missionsService.GetMissionByIdAsync(missionId);
+        
             return View(mission);
         }
+
     }
+
 }
+
